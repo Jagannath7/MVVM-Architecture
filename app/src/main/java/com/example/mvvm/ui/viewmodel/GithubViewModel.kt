@@ -22,7 +22,7 @@ class GithubViewModel : ViewModel() {
         }
     }
 
-    fun searchusers(name:String) = liveData(Dispatchers.IO){
+    fun searchUsers(name:String) = liveData(Dispatchers.IO){
         val response = withContext(Dispatchers.IO){GithubRepository.searchUsers(name)}
         if(response.isSuccessful){
             response.body()?.let {
